@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Activation Predictor Neural Network</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Adaptive Activation Neural Network</h1>
+  <p>
+    The network learns the bell curve and its activation preferences together through backpropagation.
+    The population panel trains and evolves several AI models side by side.
+  </p>
+
+  <div class="container">
+    <canvas id="curveCanvas" width="560" height="380"></canvas>
+    <canvas id="actCanvas" width="300" height="380"></canvas>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><span class="dot" style="background: var(--green);"></span> Target Bell Curve</div>
+    <div class="legend-item"><span class="dot" style="background: var(--red);"></span> Network Prediction</div>
+    <div class="legend-item"><span class="dot" style="background: var(--blue); opacity: 0.4;"></span> Adaptive Hidden Neurons</div>
+  </div>
+
+  <div class="controls">
+    <button id="toggleBtn">Pause</button>
+    <button id="resetBtn">Reset Network</button>
+    <div class="stats">
+      Epoch: <span id="epochDisplay">0</span> |
+      Training MSE: <span id="trainingLossDisplay">—</span> |
+      Evaluation MSE: <span id="evaluationLossDisplay">0.00000</span>
+    </div>
+  </div>
+
+  <section class="comparison" aria-labelledby="comparisonTitle">
+    <h2 id="comparisonTitle">AI population training and evolution</h2>
+    <p>
+      Train several models on the same samples. They vary activation choices, learning rates,
+      and optimizers (SGD, momentum, and Adam). Each generation copies successful models and mutates their settings.
+    </p>
+    <button id="compareBtn">Start AI population</button>
+    <span id="comparisonStatus" class="comparison-status" role="status">Population is stopped.</span>
+    <pre id="comparisonResults" class="comparison-results"></pre>
+  </section>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
